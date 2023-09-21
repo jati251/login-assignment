@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Dashboard() {
   const user = localStorage.user;
@@ -6,11 +7,11 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    localStorage.clear();
     Swal.fire({
       icon: "success",
       text: "Success logout !",
     });
+    localStorage.clear();
     navigate("/login");
   }
 
