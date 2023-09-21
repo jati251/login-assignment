@@ -34,7 +34,8 @@ export default function LoginPage() {
         text: "Email or Password is wrong",
       });
     } else {
-      localStorage.user = user;
+      localStorage.user = formData.email;
+
       navigate("/dashboard");
     }
   }
