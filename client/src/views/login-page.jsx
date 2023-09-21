@@ -28,7 +28,17 @@ export default function LoginPage() {
 
   async function loginUser(payload) {
     const { email, password } = user;
-    if (payload.email !== email || payload.password !== password) {
+    if (payload.email === "") {
+      Swal.fire({
+        icon: "error",
+        text: "Email is empty",
+      });
+    } else if (payload.password === "") {
+      Swal.fire({
+        icon: "error",
+        text: "Password is empty",
+      });
+    } else if (payload.email !== email || payload.password !== password) {
       Swal.fire({
         icon: "error",
         text: "Email or Password is wrong",
