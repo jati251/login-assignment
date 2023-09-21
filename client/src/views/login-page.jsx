@@ -45,7 +45,10 @@ export default function LoginPage() {
       });
     } else {
       localStorage.user = formData.email;
-
+      Swal.fire({
+        icon: "success",
+        text: "Success login !",
+      });
       navigate("/dashboard");
     }
   }

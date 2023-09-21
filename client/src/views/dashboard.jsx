@@ -7,6 +7,10 @@ export default function Dashboard() {
 
   function handleLogout() {
     localStorage.clear();
+    Swal.fire({
+      icon: "success",
+      text: "Success logout !",
+    });
     navigate("/login");
   }
 
